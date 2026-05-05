@@ -2,10 +2,6 @@ name: Delete S3 Bucket
 
 on:
   workflow_dispatch:
-    inputs:
-      bucket_name:
-        description: "S3 Bucket Name"
-        required: true
 
 jobs:
   delete:
@@ -31,6 +27,4 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Run Delete Script
-        env:
-          BUCKET_NAME: ${{ github.event.inputs.bucket_name }}
         run: python delete-bucket.py
