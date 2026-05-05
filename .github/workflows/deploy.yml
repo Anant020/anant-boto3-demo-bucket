@@ -27,4 +27,4 @@ jobs:
             aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Run Boto3 Script
-        run: python app.py
+        run: python create-upload-bucket.py
